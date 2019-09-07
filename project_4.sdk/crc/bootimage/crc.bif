@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]/home/user/project_4/project_4.sdk/booloader/Debug/booloader.elf
+	/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+	/home/user/project_4/project_4.sdk/crc/Release/crc.elf
+}

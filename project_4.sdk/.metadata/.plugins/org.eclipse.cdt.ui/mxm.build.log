@@ -1,0 +1,8 @@
+16:29:14 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+
+16:29:15 Build Finished (took 67ms)
+

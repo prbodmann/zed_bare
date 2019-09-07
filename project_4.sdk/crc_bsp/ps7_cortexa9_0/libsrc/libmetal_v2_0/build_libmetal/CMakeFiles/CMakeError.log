@@ -1,0 +1,25 @@
+Determining if files xintc.h exist failed with the following output:
+Change Dir: /home/user/project_4/project_4.sdk/crc_bsp/ps7_cortexa9_0/libsrc/libmetal_v2_0/build_libmetal/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_43131/fast"
+/usr/bin/make -f CMakeFiles/cmTC_43131.dir/build.make CMakeFiles/cmTC_43131.dir/build
+make[1]: Entering directory '/home/user/project_4/project_4.sdk/crc_bsp/ps7_cortexa9_0/libsrc/libmetal_v2_0/build_libmetal/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_43131.dir/CheckIncludeFiles.c.obj
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/bin/arm-none-eabi-gcc   -O2 -c -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra -O3 -I/home/user/project_4/project_4.sdk/crc_bsp/ps7_cortexa9_0/include    -o CMakeFiles/cmTC_43131.dir/CheckIncludeFiles.c.obj   -c /home/user/project_4/project_4.sdk/crc_bsp/ps7_cortexa9_0/libsrc/libmetal_v2_0/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/user/project_4/project_4.sdk/crc_bsp/ps7_cortexa9_0/libsrc/libmetal_v2_0/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:10: fatal error: xintc.h: No such file or directory
+ #include <xintc.h>
+          ^~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_43131.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_43131.dir/CheckIncludeFiles.c.obj' failed
+make[1]: *** [CMakeFiles/cmTC_43131.dir/CheckIncludeFiles.c.obj] Error 1
+make[1]: Leaving directory '/home/user/project_4/project_4.sdk/crc_bsp/ps7_cortexa9_0/libsrc/libmetal_v2_0/build_libmetal/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_43131/fast' failed
+make: *** [cmTC_43131/fast] Error 2
+
+Source:
+/* */
+#include <xintc.h>
+
+
+int main(void){return 0;}
+
