@@ -88,8 +88,9 @@ void send_message(size_t size){
 			temp=(unsigned char*)&buffer[i];
 				XUartPs_Send(&Uart_Ps,&temp[j], 1);
 		}*/
-		printf( "%08X" , *(unsigned int*)&buffer[i] );
-		fflush(stdout);
+		fwrite(&buffer[i],1,sizeof(unsigned int), stdout );
+				//xil_printf( "%08X" , *(unsigned int*)&buffer[i]);
+				fflush(stdout);
 	}
 }
 

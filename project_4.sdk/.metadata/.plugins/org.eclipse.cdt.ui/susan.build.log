@@ -1,8 +1,54 @@
-16:29:23 **** Auto Build of configuration Release for project susan ****
+15:09:56 **** Auto Build of configuration Release for project susan ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
-make: Nothing to be done for 'main-build'.
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'edge_draw':
+../src/helloworld.c:514:21: warning: value computed is not used [-Wunused-value]
+         *inp++=255; *inp++;     *inp=255; inp+=x_size-2;
+                     ^~~~~~
+../src/helloworld.c: In function 'put_image':
+../src/helloworld.c:1326:35: warning: passing argument 4 of 'f_write' from incompatible pointer type [-Wincompatible-pointer-types]
+             f_write(&fd2,&in[i],1,&j);
+                                   ^~
+In file included from ../src/helloworld.c:56:
+../../crc_bsp/ps7_cortexa9_0/include/ff.h:276:61: note: expected 'UINT *' {aka 'unsigned int *'} but argument is of type 'FRESULT *' {aka 'enum <anonymous> *'}
+ FRESULT f_write (FIL* fp, const void* buff, UINT btw, UINT* bw); /* Write data to the file */
+                                                       ~~~~~~^~
+../src/helloworld.c:1319:19: warning: unused variable 'res' [-Wunused-variable]
+           FRESULT res,j;
+                   ^~~
+../src/helloworld.c:1318:18: warning: unused variable 'i' [-Wunused-variable]
+              int i;
+                  ^
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:1350:6: warning: variable 'header' set but not used [-Wunused-but-set-variable]
+ char header [100];
+      ^~~~~~
+../src/helloworld.c: In function 'put_image':
+../src/helloworld.c:1325:20: warning: 'i' may be used uninitialized in this function [-Wmaybe-uninitialized]
+            for(int i;i<x_size*y_size;i++)
+                    ^
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: susan.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "susan.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: susan.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size susan.elf  |tee "susan.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 192028	   2636	5287840	5482504	 53a808	susan.elf
+Finished building: susan.elf.size
+ 
 
-16:29:23 Build Finished (took 67ms)
+15:09:57 Build Finished (took 1s.223ms)
 

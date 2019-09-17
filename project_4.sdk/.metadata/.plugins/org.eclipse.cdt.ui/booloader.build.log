@@ -1,4 +1,4 @@
-16:28:47 **** Build of configuration Debug for project booloader ****
+17:54:18 **** Auto Build of configuration Debug for project booloader ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
@@ -82,5 +82,5 @@ arm-none-eabi-size booloader.elf  |tee "booloader.elf.size"
 Finished building: booloader.elf.size
  
 
-16:28:48 Build Finished (took 799ms)
+17:54:19 Build Finished (took 931ms)
 

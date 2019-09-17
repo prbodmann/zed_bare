@@ -6,7 +6,7 @@
 #define MOD 1000
 #define PI 3.1415926535897932384626433
 
-#define MATRIX_SIZE 128 // matrix size
+#define MATRIX_SIZE 400 // matrix size
 
 #define US_TO_S 0.000001
 #define US_TO_MS 0.001
@@ -32,12 +32,13 @@ void send_message(size_t size){
 			temp=(unsigned char*)&buffer[i];
 				XUartPs_Send(&Uart_Ps,&temp[j], 1);
 		}*/
-		printf( "%08X" , *(unsigned int*)&buffer[i] );
-		fflush(stdout);
+		fwrite(&buffer[i],1,sizeof(unsigned int), stdout );
+				//xil_printf( "%08X" , *(unsigned int*)&buffer[i]);
+				fflush(stdout);
 	}
 }
 
-#define NUM_EXEC 10
+#define NUM_EXEC 1
 //---------------------------------------------------------------------------
 int main(int argc, char **argv)
 {
@@ -114,13 +115,14 @@ int main(int argc, char **argv)
                 			buffer[1] = *((unsigned int*)&i);
                 			buffer[2] = *((unsigned int*)&j);
                 			buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
-                			send_message(4);
+                			//send_message(4);
                     		}
                 	}
                     //printf("},\n");
                 	///printf("a");
                 }
                 //printf("end");
+                //return 0;
             }
 
     	//########### control_dut ###########

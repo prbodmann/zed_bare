@@ -19735,3 +19735,811 @@ make pre-build main-build
 a9-linaro-pre-build-step
  
 make: Nothing to be done for 'main-build'.
+17:29:16 **** Clean-only build of configuration Release for project mxm ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  mxm.elf.size  mxm.elf
+ 
+17:29:16 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:103:69: warning: iteration 128 invokes undefined behavior [-Waggressive-loop-optimizations]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                                                      ~~~~~~~~~~~~~~~^~~
+../src/helloworld.c:100:18: note: within this loop
+                  for(j=0; j<MATRIX_SIZE; j++)
+                  ^~~
+../src/helloworld.c:103:69: warning: iteration 128 invokes undefined behavior [-Waggressive-loop-optimizations]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                                                      ~~~~~~~~~~~~~~~^~~
+../src/helloworld.c:97:17: note: within this loop
+                 for (i=0; i<MATRIX_SIZE; i++)
+                 ^~~
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57368	  68120	1103344	1228832	 12c020	mxm.elf
+Finished building: mxm.elf.size
+ 
+17:30:48 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:5:
+../src/golden.h:3:31: error: 'MATRIX_SIZE' undeclared here (not in a function)
+     unsigned int float_golden[MATRIX_SIZE][MATRIX_SIZE]=
+                               ^~~~~~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/helloworld.o] Error 1
+src/subdir.mk:24: recipe for target 'src/helloworld.o' failed
+17:31:42 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:5:
+../src/golden.h:2:14: error: array type has incomplete element type 'unsigned int[]'
+ unsigned int float_golden[][]=
+              ^~~~~~~~~~~~
+../src/golden.h:2:14: note: declaration of 'float_golden' as multidimensional array must have bounds for all dimensions except the first
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:24: recipe for target 'src/helloworld.o' failed
+make: *** [src/helloworld.o] Error 1
+17:31:54 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57368	 362584	1103344	1523296	 173e60	mxm.elf
+Finished building: mxm.elf.size
+ 
+17:31:58 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57368	 362584	1103344	1523296	 173e60	mxm.elf
+Finished building: mxm.elf.size
+ 
+17:34:06 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:35:12 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:35:14 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:35:52 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:102:36: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   printf("0x%X,",*((unsigned int*)&mCS0[i][j]));
+                                   ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57768	 362584	1103344	1523696	 173ff0	mxm.elf
+Finished building: mxm.elf.size
+ 
+17:35:55 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:36:10 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:102:36: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   printf("0x%X,",*((unsigned int*)&mCS0[i][j]));
+                                   ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57680	 362584	1103344	1523608	 173f98	mxm.elf
+Finished building: mxm.elf.size
+ 
+17:36:25 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:37:04 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:37:31 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:102:36: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   printf("0x%X,",*((unsigned int*)&mCS0[i][j]));
+                                   ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57592	 362584	1103344	1523520	 173f40	mxm.elf
+Finished building: mxm.elf.size
+ 
+17:37:33 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:39:15 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:39:37 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:39:49 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:40:12 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:40:25 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:40:40 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:54:17 **** Clean-only build of configuration Debug for project booloader ****
+make clean 
+rm -rf  ./src/fsbl_handoff.o ./src/fsbl_hooks.o ./src/image_mover.o ./src/main.o ./src/md5.o ./src/nand.o ./src/nor.o ./src/pcap.o ./src/ps7_init.o ./src/qspi.o ./src/rsa.o ./src/sd.o  ./src/fsbl_handoff.d  ./src/fsbl_hooks.d ./src/image_mover.d ./src/main.d ./src/md5.d ./src/nand.d ./src/nor.d ./src/pcap.d ./src/ps7_init.d ./src/qspi.d ./src/rsa.d ./src/sd.d  booloader.elf.size  booloader.elf
+ 
+17:54:18 **** Auto Build of configuration Debug for project booloader ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/fsbl_handoff.S
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/fsbl_handoff.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_handoff.d" -MT"src/fsbl_handoff.o" -o "src/fsbl_handoff.o" "../src/fsbl_handoff.S"
+Finished building: ../src/fsbl_handoff.S
+ 
+Building file: ../src/fsbl_hooks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/fsbl_hooks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_hooks.d" -MT"src/fsbl_hooks.o" -o "src/fsbl_hooks.o" "../src/fsbl_hooks.c"
+Finished building: ../src/fsbl_hooks.c
+ 
+Building file: ../src/image_mover.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/image_mover.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/image_mover.d" -MT"src/image_mover.o" -o "src/image_mover.o" "../src/image_mover.c"
+Finished building: ../src/image_mover.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:137:
+../../booloader_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Finished building: ../src/main.c
+ 
+Building file: ../src/md5.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/md5.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/md5.d" -MT"src/md5.o" -o "src/md5.o" "../src/md5.c"
+Finished building: ../src/md5.c
+ 
+Building file: ../src/nand.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/nand.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nand.d" -MT"src/nand.o" -o "src/nand.o" "../src/nand.c"
+Finished building: ../src/nand.c
+ 
+Building file: ../src/nor.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/nor.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nor.d" -MT"src/nor.o" -o "src/nor.o" "../src/nor.c"
+Finished building: ../src/nor.c
+ 
+Building file: ../src/pcap.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/pcap.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/pcap.d" -MT"src/pcap.o" -o "src/pcap.o" "../src/pcap.c"
+In file included from ../src/pcap.c:100:
+../../booloader_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Finished building: ../src/pcap.c
+ 
+Building file: /home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0/ps7_init.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/ps7_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ps7_init.d" -MT"src/ps7_init.o" -o "src/ps7_init.o" "/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0/ps7_init.c"
+Finished building: /home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0/ps7_init.c
+ 
+Building file: ../src/qspi.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/qspi.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/qspi.d" -MT"src/qspi.o" -o "src/qspi.o" "../src/qspi.c"
+Finished building: ../src/qspi.c
+ 
+Building file: ../src/rsa.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/rsa.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rsa.d" -MT"src/rsa.o" -o "src/rsa.o" "../src/rsa.c"
+Finished building: ../src/rsa.c
+ 
+Building file: ../src/sd.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/user/project_4/project_4.sdk/design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/sd.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../booloader_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sd.d" -MT"src/sd.o" -o "src/sd.o" "../src/sd.c"
+Finished building: ../src/sd.c
+ 
+Building target: booloader.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../booloader_bsp/ps7_cortexa9_0/lib -o "booloader.elf"  ./src/fsbl_handoff.o ./src/fsbl_hooks.o ./src/image_mover.o ./src/main.o ./src/md5.o ./src/nand.o ./src/nor.o ./src/pcap.o ./src/ps7_init.o ./src/qspi.o ./src/rsa.o ./src/sd.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lrsa,-lxil,-lgcc,-lc,--end-group
+Finished building target: booloader.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size booloader.elf  |tee "booloader.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  89608	  11664	  75384	 176656	  2b210	booloader.elf
+Finished building: booloader.elf.size
+ 
+17:54:19 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:102:36: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   printf("0x%X,",*((unsigned int*)&mCS0[i][j]));
+                                   ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57592	 362584	1103344	1523520	 173f40	mxm.elf
+Finished building: mxm.elf.size
+ 
+17:54:27 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57288	 362584	1103344	1523216	 173e10	mxm.elf
+Finished building: mxm.elf.size
+ 
+17:54:31 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:55:00 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57288	 362584	1103344	1523216	 173e10	mxm.elf
+Finished building: mxm.elf.size
+ 
+17:55:06 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:55:33 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:103:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:116:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57272	 362584	1103344	1523200	 173e00	mxm.elf
+Finished building: mxm.elf.size
+ 
+17:55:35 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:59:04 **** Clean-only build of configuration Release for project crc ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  crc.elf.size  crc.elf
+ 
+14:59:04 **** Auto Build of configuration Release for project crc ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:9:
+../../crc_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: crc.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "crc.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: crc.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size crc.elf  |tee "crc.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 161224	   2640	26654976	26818840	1993918	crc.elf
+Finished building: crc.elf.size
+ 
+15:02:43 **** Incremental Build of configuration Release for project crc ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:03:09 **** Incremental Build of configuration Release for project crc ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:03:20 **** Incremental Build of configuration Release for project crc ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:03:47 **** Incremental Build of configuration Release for project crc ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:04:15 **** Incremental Build of configuration Release for project crc ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:04:47 **** Incremental Build of configuration Release for project crc ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:06:24 **** Incremental Build of configuration Release for project crc ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:08:37 **** Auto Build of configuration Release for project crc ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:9:
+../../crc_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: crc.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "crc.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: crc.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size crc.elf  |tee "crc.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 161320	   2640	26654976	26818936	1993978	crc.elf
+Finished building: crc.elf.size
+ 
+15:08:41 **** Incremental Build of configuration Release for project crc ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:09:15 **** Clean-only build of configuration Release for project fft ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  fft.elf.size  fft.elf
+ 
+15:09:15 **** Auto Build of configuration Release for project fft ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:334:23: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                 if((*((unsigned int*)&RealOut[i]) != goldRealOut[i]) || (*((unsigned int*)&ImagOut[i]) != goldImagOut[i]))
+                      ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:334:76: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                 if((*((unsigned int*)&RealOut[i]) != goldRealOut[i]) || (*((unsigned int*)&ImagOut[i]) != goldImagOut[i]))
+                                                                           ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:343:41: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                           buffer[1] = *((uint32_t*)&i);
+                                        ~^~~~~~~~~~~~~~
+../src/helloworld.c:344:41: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                           buffer[2] = *((uint32_t*)&RealOut[i]);
+                                        ~^~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:345:41: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                           buffer[3] = *((uint32_t*)&ImagOut[i]); // u32, float has 32 bits
+                                        ~^~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: fft.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "fft.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: fft.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size fft.elf  |tee "fft.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  63552	 264728	 809792	1138072	 115d98	fft.elf
+Finished building: fft.elf.size
+ 
+15:09:23 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:104:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:117:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29800	 362184	1102648	1494632	 16ce68	mxm.elf
+Finished building: mxm.elf.size
+ 
+15:09:36 **** Auto Build of configuration Release for project qsort ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:126:14: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+   buffer[1]=*(unsigned int*)&rc;
+              ^~~~~~~~~~~~~~~~~~
+../src/helloworld.c:134:18: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+       buffer[1]=*(unsigned int*)&res;
+                  ^~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:142:15: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+    buffer[1]=*(unsigned int*)&res;
+               ^~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:173:19: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+             if (*((long long *)&distance[i]) != temp_gold[i])
+                  ~^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:196:27: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+             buffer[1] = *((uint32_t*)&num_SDCs);
+                          ~^~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: qsort.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "qsort.elf"  ./src/golden.o ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: qsort.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size qsort.elf  |tee "qsort.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+1667324	   2228	1426672	3096224	 2f3ea0	qsort.elf
+Finished building: qsort.elf.size
+ 
+15:09:56 **** Clean-only build of configuration Release for project susan ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  susan.elf.size  susan.elf
+ 
+15:09:56 **** Auto Build of configuration Release for project susan ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'edge_draw':
+../src/helloworld.c:514:21: warning: value computed is not used [-Wunused-value]
+         *inp++=255; *inp++;     *inp=255; inp+=x_size-2;
+                     ^~~~~~
+../src/helloworld.c: In function 'put_image':
+../src/helloworld.c:1326:35: warning: passing argument 4 of 'f_write' from incompatible pointer type [-Wincompatible-pointer-types]
+             f_write(&fd2,&in[i],1,&j);
+                                   ^~
+In file included from ../src/helloworld.c:56:
+../../crc_bsp/ps7_cortexa9_0/include/ff.h:276:61: note: expected 'UINT *' {aka 'unsigned int *'} but argument is of type 'FRESULT *' {aka 'enum <anonymous> *'}
+ FRESULT f_write (FIL* fp, const void* buff, UINT btw, UINT* bw); /* Write data to the file */
+                                                       ~~~~~~^~
+../src/helloworld.c:1319:19: warning: unused variable 'res' [-Wunused-variable]
+           FRESULT res,j;
+                   ^~~
+../src/helloworld.c:1318:18: warning: unused variable 'i' [-Wunused-variable]
+              int i;
+                  ^
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:1350:6: warning: variable 'header' set but not used [-Wunused-but-set-variable]
+ char header [100];
+      ^~~~~~
+../src/helloworld.c: In function 'put_image':
+../src/helloworld.c:1325:20: warning: 'i' may be used uninitialized in this function [-Wmaybe-uninitialized]
+            for(int i;i<x_size*y_size;i++)
+                    ^
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: susan.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "susan.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: susan.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size susan.elf  |tee "susan.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 192028	   2636	5287840	5482504	 53a808	susan.elf
+Finished building: susan.elf.size
+ 
+15:32:11 **** Auto Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../crc_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:104:24: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                   if((*(unsigned int*)&mCS0[i][j] != float_golden[i][j]))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:117:34: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+                    buffer[3] = *((unsigned int*)&mCS0[i][j]); // u32, float has 32 bits
+                                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: mxm.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../crc_bsp/ps7_cortexa9_0/lib -o "mxm.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group
+Finished building target: mxm.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mxm.elf  |tee "mxm.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29808	 642184	1942648	2614640	 27e570	mxm.elf
+Finished building: mxm.elf.size
+ 
+15:32:23 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:32:59 **** Incremental Build of configuration Release for project mxm ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
